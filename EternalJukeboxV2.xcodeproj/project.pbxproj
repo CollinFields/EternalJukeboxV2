@@ -11,12 +11,10 @@
 		94769FD623E0AC8F0094AE0C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94769FD523E0AC8F0094AE0C /* SceneDelegate.swift */; };
 		94769FD823E0AC8F0094AE0C /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94769FD723E0AC8F0094AE0C /* FirstViewController.swift */; };
 		94769FDA23E0AC8F0094AE0C /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94769FD923E0AC8F0094AE0C /* SecondViewController.swift */; };
-		94769FDD23E0AC8F0094AE0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94769FDB23E0AC8F0094AE0C /* Main.storyboard */; };
 		94769FDF23E0AC960094AE0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94769FDE23E0AC960094AE0C /* Assets.xcassets */; };
 		94769FE223E0AC960094AE0C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94769FE023E0AC960094AE0C /* LaunchScreen.storyboard */; };
-		94769FED23E0AC960094AE0C /* EternalJukeboxV2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94769FEC23E0AC960094AE0C /* EternalJukeboxV2Tests.swift */; };
-		94769FF823E0AC960094AE0C /* EternalJukeboxV2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94769FF723E0AC960094AE0C /* EternalJukeboxV2UITests.swift */; };
 		9476A00623E0ACDB0094AE0C /* SpotifyiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9476A00523E0ACDA0094AE0C /* SpotifyiOS.framework */; };
+		94FAC07523FB5C4300E1C5E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94FAC07423FB5C4300E1C5E9 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,18 +40,14 @@
 		94769FD523E0AC8F0094AE0C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		94769FD723E0AC8F0094AE0C /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		94769FD923E0AC8F0094AE0C /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
-		94769FDC23E0AC8F0094AE0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		94769FDE23E0AC960094AE0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		94769FE123E0AC960094AE0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		94769FE323E0AC960094AE0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		94769FE823E0AC960094AE0C /* EternalJukeboxV2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EternalJukeboxV2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		94769FEC23E0AC960094AE0C /* EternalJukeboxV2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EternalJukeboxV2Tests.swift; sourceTree = "<group>"; };
-		94769FEE23E0AC960094AE0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		94769FF323E0AC960094AE0C /* EternalJukeboxV2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EternalJukeboxV2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		94769FF723E0AC960094AE0C /* EternalJukeboxV2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EternalJukeboxV2UITests.swift; sourceTree = "<group>"; };
-		94769FF923E0AC960094AE0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9476A00523E0ACDA0094AE0C /* SpotifyiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyiOS.framework; sourceTree = "<group>"; };
 		9476A00823E0AE7C0094AE0C /* Eternal Jukebox-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Eternal Jukebox-Bridging-Header.h"; sourceTree = "<group>"; };
+		94FAC07423FB5C4300E1C5E9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,8 +80,6 @@
 			isa = PBXGroup;
 			children = (
 				94769FD223E0AC8F0094AE0C /* EternalJukeboxV2 */,
-				94769FEB23E0AC960094AE0C /* EternalJukeboxV2Tests */,
-				94769FF623E0AC960094AE0C /* EternalJukeboxV2UITests */,
 				94769FD123E0AC8F0094AE0C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -111,30 +103,12 @@
 				94769FD723E0AC8F0094AE0C /* FirstViewController.swift */,
 				9476A00823E0AE7C0094AE0C /* Eternal Jukebox-Bridging-Header.h */,
 				94769FD923E0AC8F0094AE0C /* SecondViewController.swift */,
-				94769FDB23E0AC8F0094AE0C /* Main.storyboard */,
+				94FAC07423FB5C4300E1C5E9 /* Main.storyboard */,
 				94769FDE23E0AC960094AE0C /* Assets.xcassets */,
 				94769FE023E0AC960094AE0C /* LaunchScreen.storyboard */,
 				94769FE323E0AC960094AE0C /* Info.plist */,
 			);
 			path = EternalJukeboxV2;
-			sourceTree = "<group>";
-		};
-		94769FEB23E0AC960094AE0C /* EternalJukeboxV2Tests */ = {
-			isa = PBXGroup;
-			children = (
-				94769FEC23E0AC960094AE0C /* EternalJukeboxV2Tests.swift */,
-				94769FEE23E0AC960094AE0C /* Info.plist */,
-			);
-			path = EternalJukeboxV2Tests;
-			sourceTree = "<group>";
-		};
-		94769FF623E0AC960094AE0C /* EternalJukeboxV2UITests */ = {
-			isa = PBXGroup;
-			children = (
-				94769FF723E0AC960094AE0C /* EternalJukeboxV2UITests.swift */,
-				94769FF923E0AC960094AE0C /* Info.plist */,
-			);
-			path = EternalJukeboxV2UITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,7 +217,7 @@
 			files = (
 				94769FE223E0AC960094AE0C /* LaunchScreen.storyboard in Resources */,
 				94769FDF23E0AC960094AE0C /* Assets.xcassets in Resources */,
-				94769FDD23E0AC8F0094AE0C /* Main.storyboard in Resources */,
+				94FAC07523FB5C4300E1C5E9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,7 +253,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94769FED23E0AC960094AE0C /* EternalJukeboxV2Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,7 +260,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94769FF823E0AC960094AE0C /* EternalJukeboxV2UITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,14 +279,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		94769FDB23E0AC8F0094AE0C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				94769FDC23E0AC8F0094AE0C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		94769FE023E0AC960094AE0C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
