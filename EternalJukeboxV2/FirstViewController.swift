@@ -57,12 +57,6 @@ class FirstViewController: UIViewController, SPTSessionManagerDelegate, SPTAppRe
     @IBAction func PlayPauseButton(_ sender: Any) {
             
         }
-    private func skipNext() {
-        appRemote.playerAPI?.skip(toNext: <#T##SPTAppRemoteCallback?##SPTAppRemoteCallback?##(Any?, Error?) -> Void#>)
-            
-        })
-    }
-    
     
     // MARK: - SPTSessionManagerDelegate
     
