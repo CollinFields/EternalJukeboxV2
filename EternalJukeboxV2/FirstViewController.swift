@@ -41,8 +41,25 @@ class FirstViewController: UIViewController, SPTSessionManagerDelegate, SPTAppRe
         super.viewDidLoad()
         
     }
+    
+    func update(playerState: SPTAppRemotePlayerState) {
+        if lastPlayerState?.track.uri != playerState.track.uri {
+            
+        }
+        lastPlayerState = playerState
+    }
+    
     // MARK: -UI Element Links to Function
-    @IBAction func LoginButton(_ sender: Any) {
+    
+    func fetchPlayerState() {
+        
+    }
+    
+    @IBAction func Pause(_ sender: Any) {
+        appRemote.playerAPI?.pause(nil)
+        appRemote.playerAPI?.seek(toPosition: 30, callback: nil)
+    }
+    @IBAction func LoginButtonSPOT(_ sender: Any) {
     let scope: SPTScope = [.appRemoteControl, .playlistReadPrivate]
      
     if #available(iOS 11, *) {
@@ -53,6 +70,8 @@ class FirstViewController: UIViewController, SPTSessionManagerDelegate, SPTAppRe
         sessionManager.initiateSession(with: scope, options: .clientOnly, presenting: self)
            }
     }
+    
+    
     
     @IBAction func PlayPauseButton(_ sender: Any) {
             
