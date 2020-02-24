@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import AlamoFire
 
 class FirstViewController: UIViewController, SPTSessionManagerDelegate, SPTAppRemoteDelegate, SPTAppRemotePlayerStateDelegate {
     
-    fileprivate let SpotifyClientID = "ece2e7fdbb0c43938876a3926c2143de"
-    fileprivate let SpotifyRedirectURI = URL(string: "spotify-ios-quick-start://spotify-login-callback")!
+    fileprivate let SpotifyClientID = "d9f3190f802641938b898e9a418faf9e"
+    fileprivate let SpotifyRedirectURI = URL(string: "OrangeTeam.EternalJukebox://login-callback")!
     
     lazy var configuration: SPTConfiguration = {
         let configuration = SPTConfiguration(clientID: SpotifyClientID, redirectURL: SpotifyRedirectURI)
@@ -36,27 +37,47 @@ class FirstViewController: UIViewController, SPTSessionManagerDelegate, SPTAppRe
     }()
 
     fileprivate var lastPlayerState: SPTAppRemotePlayerState?
+    var defualtCallback: SPTAppRemoteCallback?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
     // MARK: -UI Element Links to Function
-    @IBAction func LoginButton(_ sender: Any) {
-    let scope: SPTScope = [.appRemoteControl, .playlistReadPrivate]
-     
-    if #available(iOS 11, *) {
-               // Use this on iOS 11 and above to take advantage of SFAuthenticationSession
-        sessionManager.initiateSession(with: scope, options: .clientOnly)
-    } else {
-               // Use this on iOS versions < 11 to use SFSafariViewController
-        sessionManager.initiateSession(with: scope, options: .clientOnly, presenting: self)
-           }
+
+    
+    @IBAction func Login(_ sender: Any) {
+        let scope: SPTScope = [.appRemoteControl, .playlistReadPrivate]
+         
+        if #available(iOS 11, *) {
+                   // Use this on iOS 11 and above to take advantage of SFAuthenticationSession
+            sessionManager.initiateSession(with: scope, options: .clientOnly)
+        } else {
+                   // Use this on iOS versions < 11 to use SFSafariViewController
+            sessionManager.initiateSession(with: scope, options: .clientOnly, presenting: self)
+               }
+        
+        var test = appRemote.isConnected
+        print(test)
+        appRemote.connect()
+        test = appRemote.isConnected
+        print(test)
+
     }
     
-    @IBAction func PlayPauseButton(_ sender: Any) {
-            
-        }
+    
+    @IBAction func Play(_ sender: Any) {
+        ///this works it just does not do anything
+        //SPTAppRemotePlayerAPI.pause(nil)
+//        self.appRemote.playerAPI?.pause(defualtCallback)
+    
+  //      self.appRemote.playerAPI?.seek(toPosition: 15, callback: nil)
+        //appRemote.playerAPI?.seekForward15Seconds(defaultCallback)
+        
+    }
+    
+    
+    
     
     // MARK: - SPTSessionManagerDelegate
     

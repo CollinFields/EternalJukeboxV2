@@ -18,6 +18,16 @@
 	<string>1.0</string>
 	<key>CFBundleURLTypes</key>
 	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>OrangeTeam.EternalJukeboxV2</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>OrangeTeam.EternalJukebox://login-callback</string>
+			</array>
+		</dict>
 		<dict/>
 	</array>
 	<key>CFBundleVersion</key>
@@ -74,16 +84,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-    <key>CFBundleURLTypes</key>
-    <array>
-      <dict>
-        <key>CFBundleURLName</key>
-        <string>com.spotify.iOS-SDK-Quick-Start</string>
-        <key>CFBundleURLSchemes</key>
-        <array>
-          <string>spotify-ios-quick-start</string>
-        </array>
-      </dict>
-    </array>
 </dict>
 </plist>
