@@ -30,7 +30,7 @@ require 'encrypted_strings'
 # token swap method in the iOS SDK:
 #
 # SPTConfiguration *configuration = [SPTConfiguration configurationWithClientID:@"044b2c45e77f45aca8da89e338849b6a"
-#                                                                   redirectURL:[NSURL URLWithString:@"spotify-login-sdk-test-app://spotify-login-callback"]];
+#                                                                   redirectURL:[NSURL URLWithString:@"OrangeTeam.EternalJukebox://login-callback"]];
 # configuration.tokenSwapURL = [NSURL urlWithString:@"http://localhost:1234/swap"];
 # configuration.tokenRefreshURL = [NSURL urlWithString:@"http://localhost:1234/refresh"];
 #
@@ -44,7 +44,7 @@ sleep(2)
 CLIENT_ID = "d9f3190f802641938b898e9a418faf9e"
 CLIENT_SECRET = "815681399ef147888467c5196aa77e8e"
 ENCRYPTION_SECRET = "cFJLyifeUJUBFWdHzVbykfDmPHtLKLGzViHW9aHGmyTLD8hGXC"
-CLIENT_CALLBACK_URL = "spotify-ios-quick-start://spotify-login-callback"
+CLIENT_CALLBACK_URL = "OrangeTeam.EternalJukebox://login-callback"
 AUTH_HEADER = "Basic " + Base64.strict_encode64(CLIENT_ID + ":" + CLIENT_SECRET)
 SPOTIFY_ACCOUNTS_ENDPOINT = URI.parse("https://accounts.spotify.com")
 

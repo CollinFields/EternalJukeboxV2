@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import AlamoFire
 
 class FirstViewController: UIViewController, SPTSessionManagerDelegate, SPTAppRemoteDelegate, SPTAppRemotePlayerStateDelegate {
     
@@ -17,10 +16,11 @@ class FirstViewController: UIViewController, SPTSessionManagerDelegate, SPTAppRe
     lazy var configuration: SPTConfiguration = {
         let configuration = SPTConfiguration(clientID: SpotifyClientID, redirectURL: SpotifyRedirectURI)
         
-        configuration.playURI = ""
+        configuration.playURI = "spotify:track:7p5bQJB4XsZJEEn6Tb7EaL"
         
         configuration.tokenSwapURL = URL(string: "http://localhost:1234/swap")
         configuration.tokenRefreshURL = URL(string: "http://localhost:1234/refresh")
+    
         
         return configuration
     }()
@@ -56,12 +56,18 @@ class FirstViewController: UIViewController, SPTSessionManagerDelegate, SPTAppRe
                    // Use this on iOS versions < 11 to use SFSafariViewController
             sessionManager.initiateSession(with: scope, options: .clientOnly, presenting: self)
                }
+        //let trackid = "08td7MxkoHQkXnWAYD8d6Q"
+        //appRemote.authorizeAndPlayURI(trackid)
         
-        var test = appRemote.isConnected
-        print(test)
-        appRemote.connect()
-        test = appRemote.isConnected
-        print(test)
+        //sleep(7)
+        //appRemote.connectionParameters.accessToken = sessionManager.session?.accessToken
+        //appRemote.connect()
+        
+        //let test = appRemote.isConnected
+        //print(test)
+        //appRemote.connect()
+        //test = appRemote.isConnected
+        //print(test)
 
     }
     
@@ -73,6 +79,15 @@ class FirstViewController: UIViewController, SPTSessionManagerDelegate, SPTAppRe
     
   //      self.appRemote.playerAPI?.seek(toPosition: 15, callback: nil)
         //appRemote.playerAPI?.seekForward15Seconds(defaultCallback)
+        
+
+        //
+//        var test = appRemote.isConnected
+//        print(test)
+//        appRemote.connect()
+//        test = appRemote.isConnected
+//        print(test)
+        
         
     }
     
@@ -91,6 +106,7 @@ class FirstViewController: UIViewController, SPTSessionManagerDelegate, SPTAppRe
 
     func sessionManager(manager: SPTSessionManager, didInitiate session: SPTSession) {
         appRemote.connectionParameters.accessToken = session.accessToken
+        print("HOLY GHOST")
         //connects the appRemote
         appRemote.connect()
     }
@@ -102,6 +118,7 @@ class FirstViewController: UIViewController, SPTSessionManagerDelegate, SPTAppRe
         appRemote.playerAPI?.delegate = self
         appRemote.playerAPI?.subscribe(toPlayerState: { (success, error) in
             if let error = error {
+                print("ERROR 2")
                 print("Error subscribing to player state:" + error.localizedDescription)
             }
         })
@@ -131,6 +148,37 @@ class FirstViewController: UIViewController, SPTSessionManagerDelegate, SPTAppRe
         let action = UIAlertAction(title: buttonTitle, style: .default, handler: nil)
         controller.addAction(action)
         present(controller, animated: true)
+    }
+    func fetchSpotProfile(accessToken: String){
+        let tokenURLFull = "https://api.spotify.com/v1/me"
+        let verify: NSURL = NSURL(string: tokenURLFull)!
+        let request: NSMutableURLRequest = NSMutableURLRequest(url: verify as URL)
+        request.addValue("Bearer " + accessToken, forHTTPHeaderField: "Authorization")
+        let task = URLSession.shared.dataTask(with: request as URLRequest) { data, response, error in
+            if error == nil {
+                let result = try! JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [AnyHashable: Any]
+                //AccessToken
+                print("Spotify Access Token: \(accessToken)")
+                //Spotify Handle
+                let spotifyId: String! = (result?["id"] as! String)
+                print("Spotify Id: \(spotifyId ?? "")")
+                //Spotify Display Name
+                let spotifyDisplayName: String! = (result?["display_name"] as! String)
+                print("Spotify Display Name: \(spotifyDisplayName ?? "")")
+                //Spotify Email
+                let spotifyEmail: String! = (result?["email"] as! String)
+                print("Spotify Email: \(spotifyEmail ?? "")")
+                //Spotify Profile Avatar URL
+                let spotifyAvatarURL: String!
+                let spotifyProfilePicArray = result?["images"] as? [AnyObject]
+                if (spotifyProfilePicArray?.count)! > 0 {
+                    spotifyAvatarURL = spotifyProfilePicArray![0]["url"] as? String
+                } else {
+                    spotifyAvatarURL = "Not exists"
+                }
+                print("Spotify Profile Avatar URL: \(spotifyAvatarURL ?? "")")
+            }
+        }
     }
 
 }
